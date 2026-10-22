@@ -1,6 +1,6 @@
 {
-  "name": "HLE-Verified Gold Multiple-Choice 154 (text-only)",
-  "description": "All 154 image-free multiple-choice items in the Gold split of HLE-Verified; the other 55 multiple-choice items require images and are excluded.",
+  "name": "HLE-Verified Gold Multiple-Choice 154 (no image data)",
+  "description": "All 154 multiple-choice items in the Gold split whose records contain no image data. The other 55 multiple-choice items contain image data (36 question images, 19 rationale-only) and are excluded.",
   "source": {
     "repo": "https://github.com/SKYLENAGE-AI/HLE-Verified",
     "commit": "b705e0fb541c025a1532ce0d60d70ae2f53b00e0",
@@ -10,10 +10,12 @@
     "multiple_choice_items_in_split": 209
   },
   "selection": {
-    "method": "exhaustive: every Gold multiple-choice item containing no image data, in source line order",
+    "method": "exhaustive: every Gold multiple-choice item whose record contains no image data, in source line order",
     "criteria": "answer_type == 'multipleChoice' and image == '' and image_preview == null and rationale_image == null",
     "count": 154,
-    "excluded_multiple_choice_with_images": 55,
+    "excluded_multiple_choice_total": 55,
+    "excluded_with_question_image": 36,
+    "excluded_rationale_image_only": 19,
     "source_line_indices_0based": [
       0,
       3,
@@ -175,7 +177,7 @@
     "file": "gold_mc_text.jsonl",
     "sha256": "41af3631244e6525a5b2c1c434199774fa1ff77201eb76829923abdd67af6fa4",
     "bytes": 542355,
-    "format": "JSONL, one complete source record per line; no image data"
+    "format": "JSONL, one complete source record per line; all image fields empty"
   },
   "stats": {
     "items": 154,
